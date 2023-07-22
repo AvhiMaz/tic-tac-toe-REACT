@@ -29,3 +29,16 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.winner-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gold;
+}
+
+.win-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

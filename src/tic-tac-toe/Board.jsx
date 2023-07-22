@@ -20,7 +20,7 @@ const Board = () => {
         for (let win of logic) {
             const [a, b, c] = win;
             if (state[a] != null && state[a] === state[b] && state[a] === state[c]) {
-                return true;
+                return state[a];
             }
         }
         return false;
@@ -31,20 +31,29 @@ const Board = () => {
     const [isXturn, setisXturn] = useState(true);
 
     const click = (index) => {
+        
+        if(state[index] != null){
+            return;
+        }
         const copyState = [...state];
         copyState[index] = isXturn ? "X" : "O";
         setState(copyState);
         setisXturn(!isXturn);
+
     };
+    const handleClick = () => {
+        setState(Array(9).fill(null));
+    }
     return (
 
         <div className="board-container">
             <h1 className="container mt-5">TIC TAC TOE</h1>
 
             {winner ? (
-                <>someone won</> 
+                <><h2 className="winner-container m-4">{winner} won the game</h2> <div className="win-button m-4"><button onClick ={handleClick} className="btn btn-light">Play Again</button></div></>
                 ):(
                 <>
+                    <h4 className="winner-container m-4 r">PLAYER {isXturn ? "X" : "O"} PLEASE MOVE</h4>
                     <div className="board-row">
                         <Squares onClick={() => click(0)} value={state[0]} />
                         <Squares onClick={() => click(1)} value={state[1]} />
@@ -60,6 +69,7 @@ const Board = () => {
                         <Squares onClick={() => click(7)} value={state[7]} />
                         <Squares onClick={() => click(8)} value={state[8]} />
                     </div>
+                    <div className="win-button m-4"><button onClick ={handleClick} className="btn btn-light">Play Again</button></div>
                    
                 </>
                  )}
