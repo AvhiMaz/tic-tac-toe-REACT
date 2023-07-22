@@ -18,3 +18,14 @@ body {
     color: #dadada;
   }
 }
+
+.h5, h5 {
+  font-size: 3.25rem;
+}
+
+.mt-5{
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
