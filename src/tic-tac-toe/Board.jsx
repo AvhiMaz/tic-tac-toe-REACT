@@ -69,7 +69,7 @@ const Board = () => {
                         <Squares onClick={() => click(7)} value={state[7]} />
                         <Squares onClick={() => click(8)} value={state[8]} />
                     </div>
-                    <div className="win-button m-4"><button onClick ={handleClick} className="btn btn-light">Play Again</button></div>
+                    <div className="win-button m-4"><button onClick ={handleClick} className="btn btn-light">Restart</button></div>
                    
                 </>
                  )}
