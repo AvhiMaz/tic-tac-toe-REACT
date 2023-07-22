@@ -1,8 +1,9 @@
 import React from "react";
 
-const Squares = () => {
+const Squares = (props) => {
     return (
-        <div
+        <div 
+            onClick={props.onClick}
             className="squares"
             style=
             {{
@@ -15,7 +16,7 @@ const Squares = () => {
                 padding: "20px 0"
             }}>
 
-            <h5>x</h5>
+            <h5>{props.value}</h5>
         </div>
     )
 }
